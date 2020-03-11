@@ -1,0 +1,11 @@
+<!--<h1 mat-dialog-title>Введите значение</h1>-->
+<div mat-dialog-content>
+  <mat-form-field style="width: 100%">
+    <mat-label>Введите значение</mat-label>
+    <input style="width: 100%" matInput [(ngModel)]="data.value">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Отменить</button>
+  <button mat-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Сохранить</button>
+</div>
