@@ -1,0 +1,25 @@
+<div class="login-container" fxLayout="row" fxLayoutAlign="center center">
+  <div class="login-content">
+    <div class="logo"><img src="assets/logo.png" width="140px" alt="Warehouse"></div>
+    <form class="form" role="form" (submit)="login()"><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userDetails.username" type="text" name="email">
+        <mat-placeholder>
+          Email
+        </mat-placeholder>
+      </mat-form-field>
+      <br><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userDetails.password" type="password" name="password">
+        <mat-placeholder>
+          Password
+        </mat-placeholder>
+      </mat-form-field>
+      <br><br>
+      <div class="submit-button">
+        <button mat-raised-button color="warn" class="login-button" type="submit" name="action">LOGIN</button>
+        <br><br>
+      </div>
+    </form>
+  </div>
+</div>
