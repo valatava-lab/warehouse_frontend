@@ -6,6 +6,7 @@ import { MaterialDesignModule } from '../modules/material-design/material-design
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditItemComponent } from './components/dialog/edit-item/edit-item.component';
 import { CarComponent } from './components/dictionaries/car/car.component';
+import { CustomerComponent } from './components/dictionaries/customer/customer.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { PrivateRoutingModule } from './private-routing.module';
 
@@ -20,7 +21,8 @@ import { PrivateRoutingModule } from './private-routing.module';
     DashboardComponent,
     CarComponent,
     MainNavComponent,
-    EditItemComponent
+    EditItemComponent,
+    CustomerComponent
   ],
   entryComponents: [
     EditItemComponent
