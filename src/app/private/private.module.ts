@@ -9,6 +9,7 @@ import { CarComponent } from './components/dictionaries/car/car.component';
 import { CustomerComponent } from './components/dictionaries/customer/customer.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { PrivateRoutingModule } from './private-routing.module';
+import { CategoryComponent } from './components/dictionaries/category/category.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { PrivateRoutingModule } from './private-routing.module';
     CarComponent,
     MainNavComponent,
     EditItemComponent,
-    CustomerComponent
+    CustomerComponent,
+    CategoryComponent
   ],
   entryComponents: [
     EditItemComponent
