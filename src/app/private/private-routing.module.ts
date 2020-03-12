@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CarComponent } from './components/dictionaries/car/car.component';
+import { CustomerComponent } from './components/dictionaries/customer/customer.component';
 import { AuthenticatedUserGuard } from './guards/authenticated-user-guard/authenticated-user.guard';
 
 
@@ -16,6 +17,12 @@ const privateRoutes: Routes = [
       {
         path: 'cars',
         component: CarComponent,
+        canLoad: [AuthenticatedUserGuard],
+        canActivate: [AuthenticatedUserGuard]
+      },
+      {
+        path: 'customers',
+        component: CustomerComponent,
         canLoad: [AuthenticatedUserGuard],
         canActivate: [AuthenticatedUserGuard]
       }
