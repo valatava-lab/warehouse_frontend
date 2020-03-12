@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MatTableDataSource } from '@angular/material';
-import { Car } from '../../../model/car';
-import { CarService } from '../../../services/car.service';
+import { Customer } from '../../../model/customer';
+import { CustomerService } from '../../../services/customer.service';
 import { EditItemComponent } from '../../dialog/edit-item/edit-item.component';
 import { ItemData } from '../../dialog/item-data';
 
 @Component({
-  selector: 'app-car',
-  templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css']
+  selector: 'app-customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.css']
 })
-export class CarComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'model'];
-  dataSource: MatTableDataSource<Car>;
+export class CustomerComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'description'];
+  dataSource: MatTableDataSource<Customer>;
 
-  constructor(private carService: CarService,
+  constructor(private customerService: CustomerService,
               private dialog: MatDialog) { }
 
   ngOnInit() {
@@ -30,8 +30,8 @@ export class CarComponent implements OnInit {
     this.openDialog({id: null, value: null} as ItemData);
   }
 
-  update(car: Car) {
-    this.openDialog({id: car.id, value: car.model} as ItemData);
+  update(customer: Customer) {
+    this.openDialog({id: customer.id, value: customer.description} as ItemData);
   }
 
   private openDialog(item: ItemData): void {
@@ -43,16 +43,16 @@ export class CarComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         if (result.id) {
-          this.carService.update(new Car(result.id, result.value)).subscribe(() => this.initDataSource());
+          this.customerService.update(new Customer(result.id, result.value)).subscribe(() => this.initDataSource());
         } else {
-          this.carService.save(new Car(result.id, result.value)).subscribe(() => this.initDataSource());
+          this.customerService.save(new Customer(result.id, result.value)).subscribe(() => this.initDataSource());
         }
       }
     });
   }
 
   private initDataSource() {
-    this.carService.getAll().subscribe(result => {
+    this.customerService.getAll().subscribe(result => {
       this.dataSource = new MatTableDataSource(result);
     });
   }
