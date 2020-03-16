@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialDesignModule } from '../modules/material-design/material-design.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -10,13 +10,21 @@ import { CustomerComponent } from './components/dictionaries/customer/customer.c
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { PrivateRoutingModule } from './private-routing.module';
 import { CategoryComponent } from './components/dictionaries/category/category.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports: [
     CommonModule,
     PrivateRoutingModule,
     MaterialDesignModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    ReactiveFormsModule
   ],
   declarations: [
     DashboardComponent,
@@ -24,7 +32,8 @@ import { CategoryComponent } from './components/dictionaries/category/category.c
     MainNavComponent,
     EditItemComponent,
     CustomerComponent,
-    CategoryComponent
+    CategoryComponent,
+    CatalogComponent
   ],
   entryComponents: [
     EditItemComponent

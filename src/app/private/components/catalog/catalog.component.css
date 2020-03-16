@@ -1,0 +1,70 @@
+.table-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 90%;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-column-id {
+  width: 80px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.filter-container {
+  display: flex;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.action-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action__container {
+  justify-content: flex-end;
+}
+
+.hide-items-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media only screen and (max-width: 640px) {
+  .hide-items-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .mat-checkbox {
+    margin-left: 16px;
+    width: 100%;
+  }
+}
