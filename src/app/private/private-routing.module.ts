@@ -5,7 +5,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CarComponent } from './components/dictionaries/car/car.component';
 import { CategoryComponent } from './components/dictionaries/category/category.component';
 import { CustomerComponent } from './components/dictionaries/customer/customer.component';
-import { TestTableComponent } from './components/test-table/test-table.component';
 import { AuthenticatedUserGuard } from './guards/authenticated-user-guard/authenticated-user.guard';
 
 
@@ -25,7 +24,6 @@ const privateRoutes: Routes = [
       },
       {
         path: 'table',
-        component: TestTableComponent,
         canLoad: [AuthenticatedUserGuard],
         canActivate: [AuthenticatedUserGuard]
       },
