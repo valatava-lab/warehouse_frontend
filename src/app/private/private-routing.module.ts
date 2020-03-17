@@ -23,11 +23,6 @@ const privateRoutes: Routes = [
         canActivate: [AuthenticatedUserGuard]
       },
       {
-        path: 'table',
-        canLoad: [AuthenticatedUserGuard],
-        canActivate: [AuthenticatedUserGuard]
-      },
-      {
         path: 'cars',
         component: CarComponent,
         canLoad: [AuthenticatedUserGuard],
